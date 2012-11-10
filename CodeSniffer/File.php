@@ -717,7 +717,7 @@ class PHP_CodeSniffer_File
             // Any internal message.
             $sniff = $code;
         } else {
-            $parts = explode('_', $this->_activeListener);
+            $parts = preg_split('/[_\\\\]/', $this->_activeListener);
             if (isset($parts[3]) === true) {
                 $sniff = $parts[0].'.'.$parts[2].'.'.$parts[3];
 
