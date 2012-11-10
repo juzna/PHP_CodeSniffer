@@ -32,6 +32,8 @@ if (class_exists('PEAR_Sniffs_Classes_ClassDeclarationSniff', true) === false) {
  */
 class PSR2_Sniffs_Classes_ClassDeclarationSniff extends PEAR_Sniffs_Classes_ClassDeclarationSniff
 {
+    /** @var int */
+    public $numBlankLinesBeforeClosingBrace = 0;
 
 
     /**
@@ -274,7 +276,7 @@ class PSR2_Sniffs_Classes_ClassDeclarationSniff extends PEAR_Sniffs_Classes_Clas
         // Check that the closing brace comes right after the code body.
         $closeBrace = $tokens[$stackPtr]['scope_closer'];
         $prevContent = $phpcsFile->findPrevious(T_WHITESPACE, ($closeBrace - 1), null, true);
-        if ($tokens[$prevContent]['line'] !== ($tokens[$closeBrace]['line'] - 1)) {
+        if ($tokens[$prevContent]['line'] !== ($tokens[$closeBrace]['line'] - $this->numBlankLinesBeforeClosingBrace - 1)) {
             $error = 'The closing brace for the %s must go on the next line after the body';
             $data  = array($tokens[$stackPtr]['content']);
             $phpcsFile->addError($error, $closeBrace, 'CloseBraceAfterBody', $data);
