@@ -35,7 +35,7 @@ class Generic_Sniffs_Functions_OpeningFunctionBraceBsdAllmanSniff implements PHP
     /**
      * Registers the tokens that this sniff wants to listen for.
      *
-     * @return void
+     * @return array
      */
     public function register()
     {

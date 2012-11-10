@@ -1,7 +1,7 @@
 <?php
 /**
  * The Tokens class contains weightings for tokens based on their
- * probability of occurance in a file.
+ * probability of occurrence in a file.
  *
  * PHP version 5
  *

@@ -70,8 +70,6 @@ class Generic_Sniffs_Metrics_CyclomaticComplexitySniff implements PHP_CodeSniffe
      */
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
-        $this->currentFile = $phpcsFile;
-
         $tokens = $phpcsFile->getTokens();
 
         // Ignore abstract methods.

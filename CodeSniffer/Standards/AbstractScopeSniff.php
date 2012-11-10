@@ -16,7 +16,7 @@
 
 /**
  * An AbstractScopeTest allows for tests that extend from this class to
- * listen for tokens within a particluar scope.
+ * listen for tokens within a particular scope.
  *
  * Below is a test that listens to methods that exist only within classes:
  * <code>
